@@ -1,0 +1,13 @@
+{
+  "id": 81,
+  "name": "Chow Chow",
+  "life_span": "12 - 15 anos",
+  "bred_for": "Guarda, cão de tração, caçador",
+  "breed_group": "Não-Esportivo",
+  "temperament": "Distante, Leal, Independente, Quieto",
+  "weight": { "imperial": "40 - 70 lbs", "metric": "18 - 32 kgs" },
+  "height": {
+    "imperial": "17 - 20 polegadas até a cernelha",
+    "metric": "43 - 51 cm até a cernelha"
+  }
+}

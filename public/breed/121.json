@@ -1,0 +1,13 @@
+{
+  "id": 121,
+  "name": "Golden Retriever",
+  "life_span": "10 - 12 anos",
+  "bred_for": "Cobrador de caça",
+  "breed_group": "Esportivo",
+  "temperament": "Inteligente, Bondoso, Confiável, Amigável, Confidente, Fidedigno",
+  "weight": { "imperial": "55 - 75 lbs", "metric": "25 - 34 kgs" },
+  "height": {
+    "imperial": "21.5 - 24 polegadas até a cernelha",
+    "metric": "55 - 61 cm até a cernelha"
+  }
+}
