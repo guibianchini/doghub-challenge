@@ -2,12 +2,12 @@
   "id": 6,
   "name": "Akita",
   "life_span": "10 - 14 years",
-  "bred_for": "Hunting bears",
-  "breed_group": "Working",
-  "temperament": "Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous",
+  "bred_for": "Caçar ursos",
+  "breed_group": "Trabalhador",
+  "temperament": "Dócil, Alerta, Sensível, Respeitável, Calmo, Amigável, Receptivo, Fiel, Corajoso",
   "weight": { "imperial": "65 - 115 lbs", "metric": "29 - 52 kgs" },
   "height": {
-    "imperial": "24 - 28 inches at the withers",
-    "metric": "61 - 71 cm at the withers"
+    "imperial": "24 - 28 polegadas até a cernelha",
+    "metric": "61 - 71 cm até a cernelha"
   }
 }

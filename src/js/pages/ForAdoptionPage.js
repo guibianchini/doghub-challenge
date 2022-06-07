@@ -1,10 +1,9 @@
-import returnArrow from '../assets/arrow.svg';
-import '../scss/App.scss';
+import '../../scss/pages/ForAdoptionPage.scss';
 import React, { useState, useEffect } from 'react';
-import shop from '../assets/shop.svg';
-import Card from './components/Card';
+import Card from '../components/Card';
+import Header from '../components/Header';
 
-const App = () => {
+const ForAdoptionPage = () => {
   const [dogData, setDogData] = useState([]);
   const [expandDogData, setExpandDogData] = useState(false);
 
@@ -28,29 +27,18 @@ const App = () => {
   
 
   return (
-    <div className="App">
-      <div className="App-header">
-
-        <img src={returnArrow} className="App-navbar-icons arrow" alt="logo" />
-
-        <div className="App-title">
-          <span>DOG</span>
-          <span className="bold">HUB</span>
-        </div>
-
-        <img src={shop} className="App-navbar-icons" alt="logo" />
- 
-      </div>
-      <div className="App-body">
-        <p className="App-body-title">Para adoção</p>
+    <div className="ForAdoptionPage">
+      <Header/>
+      <div className="ForAdoptionPage-body">
+        <p className="ForAdoptionPage-body-title">Para adoção</p>
         {
           dogData 
-          && dogData.map((e) => (
+          && dogData.map((dog) => (
             <div onClick={() => setExpandDogData(!expandDogData)}>
               <Card
-                key={e.id}
-                props={e}
-                expandDogData
+                key={dog.id}
+                props={dog}
+                expandCard={expandDogData}
               />
             </div>
           ))
@@ -60,4 +48,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default ForAdoptionPage;

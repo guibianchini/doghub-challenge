@@ -1,16 +1,16 @@
-@import "colors";
-@import "fonts";
+@import "../config/colors";
+@import "../config/fonts";
 
 * {
   font-family: $fonte;
   margin: 0;
 }
 
-.App {
+.ForAdoptionPage {
   background-color: $backgroundcolor;
 }
 
-.App-header {
+.ForAdoptionPage-header {
   background-color: $navbar;
   box-shadow: 0px 1px 16px black;
   display: flex;
@@ -23,7 +23,7 @@
   padding: 0 2rem;
 }
 
-.App-title {
+.ForAdoptionPage-title {
   font-size: 2rem;
   font-weight: 400;
   color: $maintitle;
@@ -34,12 +34,12 @@
 
 }
 
-.App-navbar-icons {
+.ForAdoptionPage-navbar-icons {
   width: 2rem;
   fill: white ;
 }
 
-.App-body {
+.ForAdoptionPage-body {
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -49,7 +49,7 @@
   gap: 1rem;
 }
 
-.App-body-title {
+.ForAdoptionPage-body-title {
   font-size: 2rem;
   font-weight: 500;
   color: $fontcolor;
@@ -58,6 +58,6 @@
 .arrow {
   width: 1.25rem !important;
 }
-.App-link {
+.ForAdoptionPage-link {
   color: #61dafb;
 }
