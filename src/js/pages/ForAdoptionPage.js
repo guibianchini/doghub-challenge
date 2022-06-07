@@ -1,19 +1,16 @@
 import '../../scss/pages/ForAdoptionPage.scss';
 import React, { useState, useEffect } from 'react';
-import Routes from "../routes";
 import { useHistory } from "react-router-dom";
-import { push } from 'connected-react-router';
 import Card from '../components/Card';
 import Header from '../components/Header';
 import { DOG_DETAILS_PAGE_ROUTE } from '../routes';
-import { FOR_ADOPTION_PAGE_ROUTE } from '../routes';
 
 const ForAdoptionPage = () => {
   const history = useHistory();
   const [dogData, setDogData] = useState([]);
   const [expandDogData, setExpandDogData] = useState(false);
 
-  const goToDogDetails = () => history.push(`${DOG_DETAILS_PAGE_ROUTE}`);
+  const goToDogDetails = (id) => history.push(`${DOG_DETAILS_PAGE_ROUTE}?=${id}`);
 
   useEffect(() => {
     const  loadDoc = () => {
@@ -46,7 +43,6 @@ const ForAdoptionPage = () => {
               <Card
                 key={dog.id}
                 props={dog}
-                expandCard={expandDogData}
               />
             </div>
           ))

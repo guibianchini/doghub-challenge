@@ -4,10 +4,21 @@ import dog6 from '../../assets/images/6.jpg';
 import dog16 from '../../assets/images/16.jpg';
 import dog81 from '../../assets/images/81.jpg';
 import dog121 from '../../assets/images/121.jpg';
+import classnames from 'classnames';
+
 
 const Card = (props) => {
-  const {id, name, temperament} = Object.values(props)[0];
-  const [dogData, setDogData] = useState([]);
+  const {expandData} = props;
+  const {
+    id,
+    name,
+    temperament,
+    bred_for,
+    breed_group,
+    height,
+    life_span,
+    weight
+  } = Object.values(props)[0];
 
   let img;
   
@@ -21,27 +32,14 @@ const Card = (props) => {
     img = dog121;    
   }
 
-  const dogTemperament = temperament.split(", ");
-
-  useEffect(() => {
-    const  loadDoc = () => {
-      let xhttp = new XMLHttpRequest();
-
-      xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          setDogData(JSON.parse(xhttp.responseText));
-        }
-      };
-
-      xhttp.open("GET", "http://localhost:8000/breeds", true);
-      xhttp.send();
-    }
-
-    loadDoc();
-  }, []);
+  const dogTemperament = temperament && temperament.split(", ");
 
   return (
-      <div className="Card">
+      <div className={
+        classnames(
+        'Card',
+        { 'Card-expanded': expandData },
+      )}>
         <img src={img} className="Card-image" alt={name} />
         <div className="Card-info">
           <p className="Card-title">
@@ -49,13 +47,63 @@ const Card = (props) => {
           </p>
           <div className="Card-tags">
             {
-              dogTemperament.map((dTemp) => (
+              dogTemperament
+              && dogTemperament.map((dTemp) => (
                 <p key={dTemp} className="Card-tag">
                   {dTemp}
                 </p>
               ))
             }
           </div>
+          {
+            expandData
+            && (
+              <div className="Card-qualities">
+                {
+                  bred_for
+                  && (
+                    <p>-{bred_for}</p>
+                  )
+                }
+                {
+                  breed_group
+                  && (
+                    <p>-{breed_group}</p>
+                  )
+                }
+                {
+                  height
+                  && (
+                    <div>
+                      <p>-{height.imperial}</p>
+                      <p>-{height.metric}</p>
+                    </div>
+                  )
+                }
+                {
+                  life_span
+                  && (
+                    <p>-{life_span}</p>
+                  )
+                }
+                {
+                  bred_for
+                  && (
+                    <p>-{bred_for}</p>
+                  )
+                }
+                {
+                  weight
+                  && (
+                    <div>
+                      <p>-{weight.imperial}</p>
+                      <p>-{weight.metric}</p>
+                    </div>
+                  )
+                }
+              </div>
+            )
+          }
         </div>
 
      

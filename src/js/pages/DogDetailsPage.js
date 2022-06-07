@@ -5,9 +5,9 @@ import Header from '../components/Header';
 
 const DogDetailsPage = (props) => {
   const [dogData, setDogData] = useState([]);
+  let dogId = window.location.search.split("=")[1];
 
   useEffect(() => {
-    console.log('detalhes');
     const  loadDoc = () => {
       let xhttp = new XMLHttpRequest();
 
@@ -17,21 +17,22 @@ const DogDetailsPage = (props) => {
         }
       };
 
-      xhttp.open("GET", "http://localhost:8000/breeds", true);
+      xhttp.open("GET", `http://localhost:8000/dogNumber${dogId}`, true);
       xhttp.send();
     }
 
     loadDoc();
-  }, []);
+  }, [dogId])
 
-  
+  if (dogData)
+    console.log(dogData);
 
   return (
     <div className="DogDetailsPage">
       <Header/>
-      <div className="App-body">
-        <p className="App-body-title">Detalhes</p>
-       
+      <div className="ForAdoptionPage-body">
+        <p className="ForAdoptionPage-body-title">Detalhes</p>
+        <Card props={dogData} expandData={true} />
       </div>
     </div>
   );

@@ -6,11 +6,12 @@
   margin: 0;
 }
 
-.ForAdoptionPage {
+.DogDetailsPage {
   background-color: $backgroundcolor;
+  height: 100%;
 }
 
-.ForAdoptionPage-header {
+.DogDetailsPage-header {
   background-color: $navbar;
   box-shadow: 0px 1px 16px black;
   display: flex;
@@ -23,7 +24,7 @@
   padding: 0 2rem;
 }
 
-.ForAdoptionPage-title {
+.DogDetailsPage-title {
   font-size: 2rem;
   font-weight: 400;
   color: $maintitle;
@@ -34,12 +35,12 @@
 
 }
 
-.ForAdoptionPage-navbar-icons {
+.DogDetailsPage-navbar-icons {
   width: 2rem;
   fill: white ;
 }
 
-.ForAdoptionPage-body {
+.DogDetailsPage-body {
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -49,7 +50,7 @@
   gap: 1rem;
 }
 
-.ForAdoptionPage-body-title {
+.DogDetailsPage-body-title {
   font-size: 2rem;
   font-weight: 500;
   color: $fontcolor;
@@ -58,6 +59,6 @@
 .arrow {
   width: 1.25rem !important;
 }
-.ForAdoptionPage-link {
+.DogDetailsPage-link {
   color: #61dafb;
 }

@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router';
 import DogDetailsPage from './pages/DogDetailsPage';
 import ForAdoptionPage from './pages/ForAdoptionPage';
 
-export const DOG_DETAILS_PAGE_ROUTE = '/dog';
 export const FOR_ADOPTION_PAGE_ROUTE = '/';
+export const DOG_DETAILS_PAGE_ROUTE = '/dog';
 
 export default function Routes () {
   return (

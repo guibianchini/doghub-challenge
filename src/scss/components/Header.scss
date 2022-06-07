@@ -22,7 +22,12 @@
   .bold {
     font-weight: 700;
   }
+}
 
+.Header-title:hover {
+  text-shadow:
+    0 0 4px #fff;
+  transition: all 0.3s ease-out;
 }
 
 .Header-navbar-icons {

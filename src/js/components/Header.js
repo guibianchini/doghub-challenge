@@ -1,13 +1,25 @@
 import returnArrow from '../../assets/arrow.svg';
 import shop from '../../assets/shop.svg';
 import '../../scss/components/Header.scss';
+import { useHistory } from "react-router-dom";
+
 
 const Header = () => {
+  const history = useHistory();
+  console.log(history);
+
+  const goHomePage = () => history.replace('/');
+
   return (
     <div className="Header-header">
       <img src={returnArrow} className="Header-navbar-icons arrow" alt="logo" />
 
-      <div className="Header-title">
+      <div
+        onClick={(e) => {
+          e.preventDefault();
+          goHomePage();
+        }}
+      className="Header-title">
           <span>DOG</span>
           <span className="bold">HUB</span>
       </div>
