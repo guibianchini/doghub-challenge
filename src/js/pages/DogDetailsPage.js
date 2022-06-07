@@ -7,6 +7,7 @@ const DogDetailsPage = (props) => {
   const [dogData, setDogData] = useState([]);
 
   useEffect(() => {
+    console.log('detalhes');
     const  loadDoc = () => {
       let xhttp = new XMLHttpRequest();
 
@@ -30,16 +31,7 @@ const DogDetailsPage = (props) => {
       <Header/>
       <div className="App-body">
         <p className="App-body-title">Detalhes</p>
-        {
-          dogData 
-          && dogData.map((dog) => (
-              <Card
-                key={dog.id}
-                props={dog}
-                expandCard={true}
-              />
-          ))
-        }
+       
       </div>
     </div>
   );

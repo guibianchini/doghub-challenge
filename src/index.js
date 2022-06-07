@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import ForAdoptionPage from './js/pages/ForAdoptionPage';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from "react-router-dom";
+import App from './js/App';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <ForAdoptionPage />
-  </React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
