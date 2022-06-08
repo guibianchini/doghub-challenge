@@ -11,7 +11,7 @@ const Header = (props) => {
   const goHomePage = () => history.replace('/');
   const goCartPage = () => history.replace('/cart');
   const pathname = history.location.pathname;
-  const {cart, setCart} = useSelector((state) => state);
+  const { cart } = useSelector((state) => state);
 
   return (
     <div className="Header-header">
