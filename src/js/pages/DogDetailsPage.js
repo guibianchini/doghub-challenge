@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
+import { getDogInfo } from '../utils/getDogInfo';
 
 import Card from '../components/Card';
 import Header from '../components/Header';
@@ -10,22 +12,8 @@ const DogDetailsPage = (props) => {
   
   let dogId = window.location.search.split("=")[1];
 
-  useEffect(() => {
-    const  loadDoc = () => {
-      let xhttp = new XMLHttpRequest();
-
-      xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-          setDogData(JSON.parse(xhttp.responseText));
-        }
-      };
-
-      xhttp.open("GET", `http://localhost:8000/dogNumber${dogId}`, true);
-      xhttp.send();
-    }
-
-    loadDoc();
-  }, [dogId])
+  if (dogData.length <= 0)
+    getDogInfo({dogId, setDogData});
 
   return (
     <div className="DogDetailsPage">

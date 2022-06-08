@@ -1,3 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700&display=swap');
 
 $fonte: 'Work Sans', 'sans-serif';
+
+$small: 300px;
+$medium: 900px;
+
+html {
+  font-size: 12px;
+
+  @media screen and (min-width: $medium) {
+    font-size: 16px;
+  }
+}

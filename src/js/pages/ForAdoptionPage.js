@@ -9,8 +9,6 @@ import { DOG_DETAILS_PAGE_ROUTE } from '../routes';
 const ForAdoptionPage = () => {
   const dogs = useSelector((state) => (state.items));
 
-  console.log('dogs',dogs);
-
   const history = useHistory();
 
   const goToDogDetails = (id) => history.push(`${DOG_DETAILS_PAGE_ROUTE}?=${id}`);

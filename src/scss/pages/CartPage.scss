@@ -6,11 +6,11 @@
   margin: 0;
 }
 
-.ForAdoptionPage {
+.CartPage {
   background-color: $backgroundcolor;
 }
 
-.ForAdoptionPage-header {
+.CartPage-header {
   background-color: $navbar;
   box-shadow: 0px 1px 16px black;
   display: flex;
@@ -23,7 +23,7 @@
   padding: 0 2rem;
 }
 
-.ForAdoptionPage-title {
+.CartPage-title {
   font-size: 2rem;
   font-weight: 400;
   color: $maintitle;
@@ -34,27 +34,62 @@
 
 }
 
-.ForAdoptionPage-navbar-icons {
+.CartPage-navbar-icons {
   width: 2rem;
   fill: white ;
 }
 
-.ForAdoptionPage-body {
+.CartPage-body {
   display: flex;
   height: 100%;
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 1rem;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-.ForAdoptionPage-body-title {
+.CartPage-body-title {
   font-size: 2rem;
   font-weight: 500;
   color: $fontcolor;
 }
 
-.ForAdoptionPage-link {
+.CartPage-link {
   color: #61dafb;
+}
+
+.CartPage-tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding: 0.75rem;
+  box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.4);
+  width: 21rem;
+  background-color: white;
+}
+
+.CartPage-tag-title {
+  color: $fontcolor;
+  font-weight: 500;
+  font-size: 1.25rem;
+  align-self: center;
+}
+
+.CartPage-tag-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.CartPage-tag-image {
+  height: 6rem;
+  width: 7rem;
+  border-radius: 6px;
+}
+
+.CartPage-tag-delete  {
+  width: 10%;
+  align-self: flex-start;
 }

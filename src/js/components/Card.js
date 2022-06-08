@@ -1,10 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import dog6 from '../../assets/images/6.jpg';
-import dog16 from '../../assets/images/16.jpg';
-import dog81 from '../../assets/images/81.jpg';
-import dog121 from '../../assets/images/121.jpg';
+import { getDogImage } from '../utils/getDogImage';
+
+import { addDogOnCart } from '../reducers/CartReducers';
 
 import classnames from 'classnames';
 
@@ -26,17 +25,7 @@ const Card = (props) => {
     weight
   } = Object.values(props)[0];
 
-  const img = () => {
-    if (id === 6){
-      return dog6;
-    } else if (id === 16){
-      return dog16;    
-    } else if (id === 81){
-      return dog81;    
-    } else if (id === 121){
-      return dog121;    
-    }
-  }
+  const img = getDogImage(id);
 
   const dogTemperament = temperament && temperament.split(", ");
 
@@ -105,7 +94,7 @@ const Card = (props) => {
                     )
                   }
                 </div>
-                <button className="Card-adoptButton" onClick={() => {setCart([...cart, String(id)])}}>
+                <button className="Card-adoptButton" onClick={() => addDogOnCart({cart, setCart, dogId: id})}>
                   ADOTAR
                 </button>
               </div>

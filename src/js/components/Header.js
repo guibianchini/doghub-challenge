@@ -1,16 +1,32 @@
-import returnArrow from '../../assets/arrow.svg';
-import shop from '../../assets/shop.svg';
-import '../../scss/components/Header.scss';
+import returnArrow from '../../assets/arrowIcon.svg';
+import shop from '../../assets/shopIcon.svg';
 import { useHistory } from "react-router-dom";
+import classnames from 'classnames';
 
+import '../../scss/components/Header.scss';
 
-const Header = () => {
+const Header = (props) => {
   const history = useHistory();
   const goHomePage = () => history.replace('/');
+  const goCartPage = () => history.replace('/cart');
+  const pathname = history.location.pathname;
 
   return (
     <div className="Header-header">
-      <img src={returnArrow} className="Header-navbar-icons arrow" alt="logo" />
+      <div>
+        <img src={returnArrow} 
+          className={
+            classnames(
+            'Header-navbar-icons',
+            'arrow',
+            { 'Header-home-page ': pathname === '/' },
+          )}
+          onClick={(e) => {
+            e.preventDefault();
+            goHomePage();
+          }} 
+          alt="logo" />
+      </div>
       
       <button 
         className="Header-title" 
@@ -22,7 +38,13 @@ const Header = () => {
         <span className="bold">HUB</span>
       </button>
 
-        <img src={shop} className="Header-navbar-icons" alt="logo" />
+        <img src={shop} 
+          onClick={(e) => {
+            e.preventDefault();
+            goCartPage();
+          }} 
+          className="Header-navbar-icons" 
+          alt="logo" />
 
     </div>
   )
