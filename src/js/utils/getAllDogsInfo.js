@@ -11,6 +11,6 @@ export const  getAllDogsInfo = (props) => {
     }
   };
 
-  xhttp.open("GET", `http://localhost:8000/breeds`, true);
+  xhttp.open("GET", `https://doghub.s3.amazonaws.com/desafio/breeds.json`, true);
   xhttp.send();
 }

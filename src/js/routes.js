@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router';
 
 import DogDetailsPage from './pages/DogDetailsPage';
 import ForAdoptionPage from './pages/ForAdoptionPage';
@@ -21,7 +21,9 @@ export default function Routes () {
       <Route exact path={CART_PAGE_ROUTE}>
         <CartPage />
       </Route>
-      <Route render={() => (<div>Miss</div>)} />
+      <Route>
+        <Redirect to={FOR_ADOPTION_PAGE_ROUTE}/>
+      </Route>
     </Switch>
   )
 }

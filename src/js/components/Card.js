@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 import { getDogImage } from '../utils/getDogImage';
 
@@ -11,6 +12,8 @@ import classnames from 'classnames';
 import '../../scss/components/Card.scss';
 
 const Card = (props) => {
+  const history = useHistory();
+  const goHomePage = () => history.replace('/');
   const {expandData} = props;
   const {cart, setCart} = useSelector((state) => state);
 
@@ -94,7 +97,10 @@ const Card = (props) => {
                     )
                   }
                 </div>
-                <button className="Card-adoptButton" onClick={() => addDogOnCart({cart, setCart, dogId: id})}>
+                <button className="Card-adoptButton" onClick={() => {
+                  addDogOnCart({cart, setCart, dogId: id});
+                  goHomePage();
+                }}>
                   ADOTAR
                 </button>
               </div>

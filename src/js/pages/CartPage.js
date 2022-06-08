@@ -1,28 +1,18 @@
 import '../../scss/pages/CartPage.scss';
 import deleteIcon from '../../assets/deleteIcon.svg';
 
-import React, { useEffect, useMemo } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+
 import Header from '../components/Header';
+
 import { getDogImage } from '../utils/getDogImage';
+
+import { removeDogFromCart } from '../reducers/CartReducers';
 
 const CartPage = () => {
   const {cart, setCart} = useSelector((state) => state);
-
-  const removeDogFromCart = ({dogId}) => {
-    const indexToRemove = cart.findIndex((dog) => String(dog) === String(dogId));
-    const newCart = cart;
-    newCart.splice(indexToRemove, 1);
-    console.log('cart', cart);
-    console.log('newCart', newCart)
-    console.log('index', indexToRemove);
-
-    setCart(newCart.length === 1 ? [] : newCart);
-    console.log('cart deleted', cart);
-  };
-
   const allDogs = useSelector((state) => (state.items));
-  console.log('caos', cart)
 
   return (
     <div className="CartPage">
@@ -30,14 +20,24 @@ const CartPage = () => {
       <div className="CartPage-body">
         <p className="CartPage-body-title">Sua lista de adoção</p>
         {
-          cart.length <= 0
+          cart
+          && cart.length <= 0
           && (
             <p>Não tem doguinhos :(</p>
           )
         }
         {
           cart
-          && cart.length >= 1
+          && cart.length > 0
+          && (
+            <button onClick={() => setCart([])} className="CartPage-clear-button">
+              Limpar lista 
+            </button>
+          )
+        }
+        {
+          cart
+          && cart.length > 0
           && cart.map((cartDog) => {
             const adoptedDog = allDogs.find((dog) => String(dog.id) === cartDog);
             const img = getDogImage(adoptedDog.id);
@@ -50,7 +50,9 @@ const CartPage = () => {
                 <img 
                   src={deleteIcon}
                   className="CartPage-tag-delete"
-                  onClick={() => removeDogFromCart({dogId: adoptedDog.id})}
+                  onClick={async (e) => {
+                    removeDogFromCart({cart, setCart, dogId: adoptedDog.id});
+                  }}
                   alt={adoptedDog.name}/>
               </div>
             )

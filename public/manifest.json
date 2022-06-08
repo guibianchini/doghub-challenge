@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "DogHub",
+  "name": "DogHub - Adoção de cachorros",
   "icons": [
     {
       "src": "favicon.ico",

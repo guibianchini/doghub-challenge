@@ -6,39 +6,6 @@
   margin: 0;
 }
 
-.CartPage {
-  background-color: $backgroundcolor;
-}
-
-.CartPage-header {
-  background-color: $navbar;
-  box-shadow: 0px 1px 16px black;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 4px;
-  text-align: center;
-  align-items: center;
-  color: $fontcolor;
-  height: 6rem;
-  padding: 0 2rem;
-}
-
-.CartPage-title {
-  font-size: 2rem;
-  font-weight: 400;
-  color: $maintitle;
-
-  .bold {
-    font-weight: 700;
-  }
-
-}
-
-.CartPage-navbar-icons {
-  width: 2rem;
-  fill: white ;
-}
-
 .CartPage-body {
   display: flex;
   height: 100%;
@@ -55,8 +22,19 @@
   color: $fontcolor;
 }
 
-.CartPage-link {
-  color: #61dafb;
+.CartPage-clear-button {
+  background: transparent;
+  font: $fonte;
+  font-size: 1rem;
+  color: $button;
+  border: none;
+  margin-top: -1.5rem;
+  text-decoration: underline;
+}
+
+.CartPage-clear-button:hover {
+  color: $fontcolor;
+  transition: all 0.3s ease-out;
 }
 
 .CartPage-tag {

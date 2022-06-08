@@ -1,15 +1,17 @@
 import returnArrow from '../../assets/arrowIcon.svg';
 import shop from '../../assets/shopIcon.svg';
-import { useHistory } from "react-router-dom";
-import classnames from 'classnames';
-
 import '../../scss/components/Header.scss';
+
+import { useHistory } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import classnames from 'classnames';
 
 const Header = (props) => {
   const history = useHistory();
   const goHomePage = () => history.replace('/');
   const goCartPage = () => history.replace('/cart');
   const pathname = history.location.pathname;
+  const {cart, setCart} = useSelector((state) => state);
 
   return (
     <div className="Header-header">
@@ -38,13 +40,23 @@ const Header = (props) => {
         <span className="bold">HUB</span>
       </button>
 
-        <img src={shop} 
-          onClick={(e) => {
-            e.preventDefault();
-            goCartPage();
-          }} 
-          className="Header-navbar-icons" 
-          alt="logo" />
+        <div className="Header-shop-icon">
+          {
+            cart
+            && cart.length > 0
+            && (
+              <span className="Header-notification-badge">{cart.length}</span>
+            )
+          }
+          <img src={shop} 
+            onClick={(e) => {
+              e.preventDefault();
+              goCartPage();
+            }} 
+            className="Header-navbar-icons" 
+            alt="logo" 
+          />
+        </div>
 
     </div>
   )

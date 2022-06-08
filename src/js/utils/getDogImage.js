@@ -1,7 +1,7 @@
-import dog6 from '../../assets/images/6.jpg';
-import dog16 from '../../assets/images/16.jpg';
-import dog81 from '../../assets/images/81.jpg';
-import dog121 from '../../assets/images/121.jpg';
+const dog6 = 'https://doghub.s3.amazonaws.com/desafio/images/6.jpg';
+const dog16 = 'https://doghub.s3.amazonaws.com/desafio/images/16.jpg';
+const dog81 = 'https://doghub.s3.amazonaws.com/desafio/images/81.jpg';
+const dog121 = 'https://doghub.s3.amazonaws.com/desafio/images/121.jpg';
 
 export const getDogImage = (id) => {
   if (id === 6){

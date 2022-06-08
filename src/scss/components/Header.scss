@@ -41,7 +41,28 @@
   display: none;
 }
 
-.Header-navbar-icons:hover {
+.Header-shop-icon {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: self-start;
+}
+
+.Header-shop-icon:hover {
   filter: drop-shadow(0px 0px 4px #fff);
-  transition: all 0.3s ease-out;
+  transition: filter 0.3s ease-out;
+}
+
+.Header-notification-badge {
+  top: 22px;
+  right: 25px;
+  padding: 0.2rem 0.45rem;
+  border-radius: 16px;
+  background: red;
+  color: white;
+  font-size: 0.7rem;
+  margin-left: -0.75rem;
+  z-index: 1;
+  display: block;
+  font-weight: 600;
+  margin-top: -0.25rem;
 }
