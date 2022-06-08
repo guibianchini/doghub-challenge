@@ -45,3 +45,38 @@
   border-radius: 6px;
   padding: 0.5rem;
 }
+
+.Card-adoptButton {
+  background-color: $button;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: $fonte;
+  color: white;
+  align-self: center;
+  font-weight: 600;
+  box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.4);
+  font-size: 1.15rem;
+}
+
+.Card-adoptButton:hover {
+  box-shadow: 0px 2px 30px rgb(0, 0, 0, 0.4);
+  transition: all 0.3s ease-out;
+}
+
+.Card-adoptButton:active {
+  width: 98%;
+  transition: all 0.3s ease-out;
+}
+
+.Card-qualities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.Card-subqualities {
+  font-size: 0.75rem;
+  padding-left: 1.25rem;
+}

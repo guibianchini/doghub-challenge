@@ -6,23 +6,21 @@ import { useHistory } from "react-router-dom";
 
 const Header = () => {
   const history = useHistory();
-  console.log(history);
-
   const goHomePage = () => history.replace('/');
 
   return (
     <div className="Header-header">
       <img src={returnArrow} className="Header-navbar-icons arrow" alt="logo" />
-
-      <div
+      
+      <button 
+        className="Header-title" 
         onClick={(e) => {
           e.preventDefault();
           goHomePage();
-        }}
-      className="Header-title">
-          <span>DOG</span>
-          <span className="bold">HUB</span>
-      </div>
+      }}>
+        <span>DOG</span>
+        <span className="bold">HUB</span>
+      </button>
 
         <img src={shop} className="Header-navbar-icons" alt="logo" />
 

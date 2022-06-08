@@ -1,10 +1,13 @@
-import '../../scss/pages/ForAdoptionPage.scss';
 import React, { useState, useEffect } from 'react';
+
 import Card from '../components/Card';
 import Header from '../components/Header';
 
+import '../../scss/pages/DogDetailsPage.scss';
+
 const DogDetailsPage = (props) => {
   const [dogData, setDogData] = useState([]);
+  
   let dogId = window.location.search.split("=")[1];
 
   useEffect(() => {
@@ -24,14 +27,11 @@ const DogDetailsPage = (props) => {
     loadDoc();
   }, [dogId])
 
-  if (dogData)
-    console.log(dogData);
-
   return (
     <div className="DogDetailsPage">
       <Header/>
-      <div className="ForAdoptionPage-body">
-        <p className="ForAdoptionPage-body-title">Detalhes</p>
+      <div className="DogDetailsPage-body">
+        <p className="DogDetailsPage-body-title">Detalhes</p>
         <Card props={dogData} expandData={true} />
       </div>
     </div>
