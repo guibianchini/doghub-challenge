@@ -12,6 +12,6 @@ export const  getDogInfo = (props) => {
     }
   };
 
-  xhttp.open("GET", `http://localhost:8000/dogNumber${dogId}`, true);
+  xhttp.open("GET", `https://doghub.s3.amazonaws.com/desafio/breed/dogNumber${dogId}.json`, true);
   xhttp.send();
 }
