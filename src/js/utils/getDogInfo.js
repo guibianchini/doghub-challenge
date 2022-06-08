@@ -12,6 +12,6 @@ export const  getDogInfo = (props) => {
     }
   };
 
-  xhttp.open("GET", `https://doghub.s3.amazonaws.com/desafio/breed/dogNumber${dogId}.json`, true);
+  xhttp.open("GET", `https://doghub.s3.amazonaws.com/desafio/breed/${dogId}.json`, true);
   xhttp.send();
 }
